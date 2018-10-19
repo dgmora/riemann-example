@@ -11,4 +11,4 @@ RUN bundle install -j4
 
 COPY . /home/app
 
-CMD ["bundle", "exec", "ruby", "lib/riemann_producer.rb"]
+CMD ["bundle", "exec", "rerun", "--background", "ruby  lib/riemann_producer.rb"]

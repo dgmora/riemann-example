@@ -17,3 +17,5 @@ services:
     image: dgmora/riemann-producer
     ports:
       - 4567:4567
+    volumes:
+      - ./riemann_producer/lib:/home/app/lib
