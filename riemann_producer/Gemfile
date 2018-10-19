@@ -1,0 +1,4 @@
+source 'https://rubygems.org'
+
+gem 'mettric', '~> 1.0'
+gem 'sinatra', '~> 2.0', '>= 2.0.2'

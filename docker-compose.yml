@@ -1,0 +1,19 @@
+version: '2.2'
+services:
+  riemann-server:
+    # environment:
+      #- LOGSPOUT=ignore
+    image: riemannio/riemann:latest
+    # links:
+    #   - riemann-graphite:graphite
+    #   - riemann-logstash:logstash
+    ports:
+      - 5555:5555
+    volumes:
+      - ./riemann.config:/etc/riemann.config
+  riemann-producer:
+    build:
+      context: ./riemann_producer
+    image: dgmora/riemann-producer
+    ports:
+      - 4567:4567
