@@ -15,7 +15,19 @@ services:
     build:
       context: ./riemann_producer
     image: dgmora/riemann-producer
+    links:
+      - riemann-server:riemann-server
+    ports:
+      - 4568:4567
+    volumes:
+      - ./riemann_producer/lib:/home/app/lib
+  riemann-dash:
+    # environment:
+    #   - RIEMANN_BASE=/app
+    image: rlister/riemann-dash:latest
+    links:
+      - riemann-server:riemann-server
     ports:
       - 4567:4567
     volumes:
-      - ./riemann_producer/lib:/home/app/lib
+      - ${PWD}/config.json:/app/config/config.json

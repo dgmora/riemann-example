@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'byebug'
 gem 'mettric', '~> 1.0'
+gem 'rerun', require: false
 gem 'sinatra', '~> 2.0', '>= 2.0.2'
-gem 'rerun'
